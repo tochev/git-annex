@@ -1,0 +1,8 @@
+[ GithubUser
+    { githubUserAvatarUrl = "https://secure.gravatar.com/avatar/22bb5af1253115042f1117b5e33c2fdd?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png"
+    , githubUserLogin = "brawnski"
+    , githubUserUrl = "https://api.github.com/users/brawnski"
+    , githubUserId = 24366
+    , githubUserGravatarId = "22bb5af1253115042f1117b5e33c2fdd"
+    }
+]

@@ -1,0 +1,8 @@
+[ GithubUser
+    { githubUserAvatarUrl = "https://secure.gravatar.com/avatar/7a6c8f49981d093b41b365a4b522378d?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png"
+    , githubUserLogin = "ktf"
+    , githubUserUrl = "https://api.github.com/users/ktf"
+    , githubUserId = 10544
+    , githubUserGravatarId = "7a6c8f49981d093b41b365a4b522378d"
+    }
+]
