@@ -1,0 +1,7 @@
+[ GithubOrganization
+    { githubOwnerAvatarUrl = "https://secure.gravatar.com/avatar/5e8f179fd7bb03da2093957fd6e1f6e6?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-org-420.png"
+    , githubOwnerLogin = "doubledrones"
+    , githubOwnerUrl = "https://api.github.com/orgs/doubledrones"
+    , githubOwnerId = 136321
+    }
+]
