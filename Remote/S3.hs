@@ -135,14 +135,13 @@ storeEncrypted r (cipher, enck) k _p = s3Action r False $ \(conn, bucket) ->
 
 storeHelper :: (AWSConnection, String) -> Remote -> Key -> FilePath -> IO (AWSResult ())
 storeHelper (conn, bucket) r k file = do
-	content <- liftIO $ L.readFile file
 	-- size is provided to S3 so the whole content does not need to be
 	-- buffered to calculate it
 	size <- maybe getsize (return . fromIntegral) $ keySize k
 	let object = setStorageClass storageclass $ 
 		S3Object bucket (bucketFile r k) ""
-			(("Content-Length", show size) : xheaders) content
-	sendObject conn object
+			(("Content-Length", show size) : xheaders) L.empty
+	sendObjectFrom conn object (L.readFile file)
 	where
 		storageclass =
 			case fromJust $ M.lookup "storageclass" $ fromJust $ config r of
