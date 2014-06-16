@@ -27,6 +27,7 @@ bundledPrograms = catMaybes
 	, Just "git-upload-pack"
 	, Just "git-receive-pack"
 	, Just "git-shell"
+	, Just "sh"
 #endif
 	, Just "cp"
 #ifndef mingw32_HOST_OS
@@ -39,9 +40,6 @@ bundledPrograms = catMaybes
 	-- (Linux probably, but not guaranteed.)
 	, Just "ssh"
 	, Just "ssh-keygen"
-#endif
-#ifndef mingw32_HOST_OS
-	, Just "sh"
 #endif
 	, SysConfig.gpg
 	, ifset SysConfig.curl "curl"
@@ -63,6 +61,10 @@ bundledPrograms = catMaybes
 	-- used to unpack the tarball when upgrading
 	, Just "gunzip"
 	, Just "tar"
+#endif
+#ifdef mingw32_HOST_OS
+	-- used for permission fixups on Windows
+	, Just "chmod"
 #endif
 	-- nice, ionice, and nocache are not included in the bundle;
 	-- we rely on the system's own version, which may better match

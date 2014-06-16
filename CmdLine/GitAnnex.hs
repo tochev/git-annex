@@ -99,6 +99,9 @@ import qualified Command.Test
 #ifdef WITH_TESTSUITE
 import qualified Command.FuzzTest
 #endif
+#ifdef mingw32_HOST_OS
+import qualified Command.MkService
+#endif
 #ifdef WITH_EKG
 import System.Remote.Monitoring
 #endif
@@ -188,6 +191,9 @@ cmds = concat
 	, Command.Test.def
 #ifdef WITH_TESTSUITE
 	, Command.FuzzTest.def
+#endif
+#ifdef mingw32_HOST_OS
+	, Command.MkService.def
 #endif
 	]
 
